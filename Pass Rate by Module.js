@@ -25,9 +25,7 @@ function roundHalfUp2(pass, total) {
 
 const modules = [...stats.keys()].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
 
-const lines = modules.map(m => {
+for (const m of modules) {
   const { pass, total } = stats.get(m);
-  return `${m} ${roundHalfUp2(pass, total)}`;
-});
-
-console.log(lines.join(' '));
+  console.log(`${m} ${roundHalfUp2(pass, total)}`);
+}
